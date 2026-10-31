@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>viewtube</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff0000">
+  
+  <!-- Optimasi PWA untuk iOS/Apple -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="Tube.jpeg">
+  
+  <!-- Tailwind CSS Framework -->
+  <script src="https://tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white font-sans m-0 p-0 antialiased selection:bg-red-600">
+
+  <!-- Navbar Premium -->
+  <header class="flex items-center justify-between px-4 py-3 bg-zinc-950/95 backdrop-blur sticky top-0 z-50 shadow-lg border-b border-zinc-800/50">
+    <div class="text-xl font-bold flex items-center gap-2 cursor-pointer select-none active:scale-95 transition" onclick="loadPopularVideos()">
+      <span class="text-red-600 text-2xl animate-pulse">▶</span> viewtube
+    </div>
+    
+    <div class="flex w-1/2 max-w-xl shadow-inner">
+      <input type="text" id="searchQuery" placeholder="Cari video..." class="w-full bg-zinc-850 text-white px-4 py-2 rounded-l-full border border-zinc-700 focus:outline-none focus:border-red-600 focus:bg-zinc-800 transition text-sm">
+      <button id="searchBtn" class="bg-zinc-700 px-6 py-2 rounded-r-full hover:bg-zinc-650 transition active:bg-zinc-800 text-sm">🔍</button>
+    </div>
+    
+    <img src="Tube.jpeg" alt="Logo" class="w-8 h-8 rounded-full object-cover border border-zinc-700 shadow-md">
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="p-4 max-w-7xl mx-auto min-h-screen">
+    <!-- Theater Video Player Container -->
+    <div id="playerContainer" class="hidden mb-8 border-b border-zinc-800 pb-6 transition-all duration-500">
+      <div class="aspect-video w-full max-w-4xl mx-auto bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-zinc-700">
+        <iframe id="videoPlayer" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <h2 id="playerTitle" class="text-xl font-bold mt-4 max-w-4xl mx-auto px-2 text-zinc-100 tracking-wide line-clamp-2">Judul Video</h2>
+    </div>
+
+    <!-- Responsive Grid Gallery -->
+    <div id="videoGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <!-- Diisi otomatis oleh JavaScript -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
