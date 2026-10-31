@@ -1,4 +1,4 @@
-const CACHE_NAME = 'viewtube-cache-v1';
+const CACHE_NAME = 'viewtube-cache-v2'; // Menaikkan versi cache untuk memicu update
 const ASSETS_TO_CACHE = [
   'index.html',
   'script.js',
