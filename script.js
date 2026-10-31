@@ -8,7 +8,7 @@ document.getElementById('searchQuery').addEventListener('keypress', (e) => {
 window.addEventListener('DOMContentLoaded', loadPopularVideos);
 
 function loadPopularVideos() {
-  const url = `https://googleapis.com{API_KEY}`;
+  const url = 'https://googleapis.com' + API_KEY;
   fetchVideos(url);
 }
 
@@ -16,7 +16,7 @@ function searchVideos() {
   const query = document.getElementById('searchQuery').value;
   if (!query.trim()) return;
   
-  const url = `https://googleapis.com{encodeURIComponent(query)}&type=video&key=${API_KEY}`;
+  const url = 'https://googleapis.com' + encodeURIComponent(query) + '&type=video&key=' + API_KEY;
   fetchVideos(url);
 }
 
@@ -65,7 +65,7 @@ function playVideo(videoId, title) {
   const player = document.getElementById('videoPlayer');
   const titleEl = document.getElementById('playerTitle');
 
-  player.src = `https://youtube.com{videoId}?autoplay=1`;
+  player.src = 'https://youtube.com' + videoId + '?autoplay=1';
   titleEl.textContent = title;
   container.classList.remove('hidden');
   container.scrollIntoView({ behavior: 'smooth' });
